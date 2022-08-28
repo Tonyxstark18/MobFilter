@@ -404,13 +404,12 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.answer()
     elif query.data == "start":
         buttons = [[
-            InlineKeyboardButton('➕ Add Me To Your Groups ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
-        ], [
-            InlineKeyboardButton('🔍 Search', switch_inline_query_current_chat=''),
-            InlineKeyboardButton('🤖 Updates', url='https://t.me/TeamEvamaria')
-        ], [
-            InlineKeyboardButton('ℹ️ Help', callback_data='help'),
-            InlineKeyboardButton('😊 About', callback_data='about')
+            InlineKeyboardButton('🔍 Search Movies', switch_inline_query_current_chat='')
+            ],[
+            InlineKeyboardButton('🎞 Main Channel', url='https://t.me/TamilMob_LinkZz'),
+            InlineKeyboardButton('Request Group 🔗', url='https://t.me/TamilMob_Discussion')
+            ],[
+            InlineKeyboardButton('About Meh 📬', callback_data='about')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -437,12 +436,12 @@ async def cb_handler(client: Client, query: CallbackQuery):
             parse_mode=enums.ParseMode.HTML
         )
     elif query.data == "about":
-        buttons = [[
-            InlineKeyboardButton('🤖 Updates', url='https://t.me/TeamEvamaria'),
+        buttons= [[
+            InlineKeyboardButton('🤖 Updates', url='https://t.me/TamilMob_LinkZz'),
             InlineKeyboardButton('♥️ Source', callback_data='source')
-        ], [
+            ],[
             InlineKeyboardButton('🏠 Home', callback_data='start'),
-            InlineKeyboardButton('🔐 Close', callback_data='close_data')
+            InlineKeyboardButton('🔮 Status', callback_data='stats')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -708,7 +707,7 @@ async def auto_filter(client, msg, spoll=False):
             **locals()
         )
     else:
-        cap = f"Here is what i found for your query {search}"
+        cap = f"**Mᴏᴠɪᴇ Nᴀᴍᴇ 🎞️** : ​`{search}`\n\n**🔗 Join : @TamilMob_LinkZz 🔗**"
     if imdb and imdb.get('poster'):
         try:
             await message.reply_photo(photo=imdb.get('poster'), caption=cap[:1024],
