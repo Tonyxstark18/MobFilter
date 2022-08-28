@@ -106,15 +106,6 @@
             "description": "true or false.",
             "value": "False",
             "required": false
-        },
-        "CUSTOM_FILE_CAPTION": {
-            "description": "true or false.",
-            "value": "<b>{file_name}</b> 
-
-<b>Join [@TamilMob_LinkZz](t.me/TamilMob_LinkZz) for More Movies</b>
-
-<b>PowereD BY @TamilMob_LinkZz</b>",
-            "required": false
         }
     },
     "addons": [],
